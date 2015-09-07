@@ -81,7 +81,7 @@ $newOrganzation = $client->organizations()->create(array(
 
 ));
 print_r($newOrganzation);
-```php
+```
 
 List triggers
 
