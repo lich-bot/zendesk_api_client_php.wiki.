@@ -61,6 +61,28 @@ $newuser = $client->users()->create(array(
 ));
 ```
 Get & create organizations
+```php
+//v1
+$listOrganizations = $client->organizations()->findAll();
+print_r($listOrganizations);
+$newOrganzation = $client->organizations()->create(array(
+  'name' => 'New World2',
+  'url' => 'www.n3world2.com'
+
+));
+print_r($newOrganzation);
+
+//v2
+$listOrganizations = $client->organizations()->findAll();
+print_r($listOrganizations);
+$newOrganzation = $client->organizations()->create(array(
+  'name' => 'New World2',
+  'url' => 'www.n3world2.com'
+
+));
+print_r($newOrganzation);
+```php
+
 List triggers
 
 
