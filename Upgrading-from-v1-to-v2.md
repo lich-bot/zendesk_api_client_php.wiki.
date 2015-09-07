@@ -45,6 +45,13 @@ $newTicket = $client->tickets()->create(array(
 ```
 
 Get & create a user
+```php
+$listusers = $client->users()->findAll();
+$newuser = $client->users()->create(array(
+  'name' => 'foo bar',
+  'email' => 'foo@bar.com'
+));
+```
 Get & create organizations
 List triggers
 
