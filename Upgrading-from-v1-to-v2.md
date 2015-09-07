@@ -44,7 +44,28 @@ $newTicket = $client->tickets()->create(array(
     ));
 ```
 Create a ticket with an attachment
+
 ```php
+//v1
+$attachmentData = array(
+    'file' => getcwd() . '/vendor/zendesk/zendesk_api_client_php/tests/assets/UK.png',
+    'name' => 'UK test non-alpha chars.png'
+);
+
+// Create a new ticket
+$newTicket = $client->tickets()->attach($attachmentData)->create(array(
+    'subject'  => 'The quick brown fox jumps over the lazy dog',
+    'comment'  => array(
+      'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    ),
+    'priority' => 'normal',
+    'file' => $attachmentData['file']
+));
+
+
+print_r($newTicket);
+
+//v2
 //upload an attachment
 $attachmentData = array(
     'file' => getcwd() . '/vendor/zendesk/zendesk_api_client_php/tests/assets/UK.png',
