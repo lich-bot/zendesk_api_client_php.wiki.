@@ -33,7 +33,7 @@ $newTicket = $client->tickets()->create(array(
     'priority' => 'normal'
 ));
 // v2
-use Zendesk\API\HTTPClient as ZendeskAPI;
+
 $tickets = $client->tickets()->findAll();
 $newTicket = $client->tickets()->create(array(
         'subject'  => 'The quick brown fox jumps over the lazy dog',
@@ -46,6 +46,14 @@ $newTicket = $client->tickets()->create(array(
 
 Get & create a user
 ```php
+//v1
+$listusers = $client->users()->findAll();
+$newuser = $client->users()->create(array(
+  'name' => 'foo bar',
+  'email' => 'foo@bar.com'
+));
+
+//v2
 $listusers = $client->users()->findAll();
 $newuser = $client->users()->create(array(
   'name' => 'foo bar',
