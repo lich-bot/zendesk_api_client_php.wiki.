@@ -136,6 +136,22 @@ List triggers
 
 ## Error handling
 
-v1 there was nothing
+V1 of the PHP API client did not provide the actual error instead it throws an exception. V2 returns you the actual error. 
 
-v2 it's a LOT better
+``` php
+//example for searching for a ticket that doesn't exist
+//v1
+Fatal error: Uncaught exception 'Zendesk\API\ResponseException' with message 'Response to Zendesk\API\Tickets::find is not valid. Call $client->getDebug() for details' in /Users/idejesus/code/phptest v1/vendor/zendesk/zendesk_api_client_php/src/Zendesk/API/Tickets.php:118
+Stack trace:
+#0 /Users/idejesus/code/phptest v1/v1.php(18): Zendesk\API\Tickets->find()
+#1 {main}
+  thrown in /Users/idejesus/code/phptest v1/vendor/zendesk/zendesk_api_client_php/src/Zendesk/API/Tickets.php on line 118
+
+//v2
+Fatal error: Uncaught exception 'Zendesk\API\Exceptions\ApiResponseException' with message 'Not Found [status code] 404 [details] {"error":"RecordNotFound","description":"Not found"}' in /Users/idejesus/code/phptest v2/vendor/zendesk/zendesk_api_client_php/src/Zendesk/API/Http.php:116
+Stack trace:
+#0 /Users/idejesus/code/phptest v2/vendor/zendesk/zendesk_api_client_php/src/Zendesk/API/HttpClient.php(365): Zendesk\API\Http::send(Object(Zendesk\API\HttpClient), 'tickets/20.json', Array)
+#1 /Users/idejesus/code/phptest v2/vendor/zendesk/zendesk_api_client_php/src/Zendesk/API/Traits/Resource/Find.php(44): Zendesk\API\HttpClient->get('tickets/20.json', Array)
+#2 /Users/idejesus/code/phptest v2/v2.php(77): Zendesk\API\Resources\Core\Tickets->find()
+#3 {main}
+  thrown in /Users/idejesus/code/phptest v2/vendor/zendesk/zendesk_api_client_php/src/Zendesk/API/Http.php on line 116
