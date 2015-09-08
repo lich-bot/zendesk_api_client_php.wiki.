@@ -1,6 +1,16 @@
 # WIP Upgrade Guide
 
-Intro to why we rewrote the API Client.
+* Make the tests run faster. Which means mocking the API calls, reducing the number of tests and making them easier to write.
+* Make the code as DRY (Do not Repeat Yourself) as possible and improve maintainability.
+* Improve the way we handle chaining.
+* Better handling of routes.
+* Handle errors well.
+* Better exception handling
+* Better unit test coverage
+* Full support for all endpoints in the core API
+* Higher code quality in general
+* A consistent interface for resources (i.e. the constructors, getters, setters, etc. should all work the same whether you're working with apps, tickets or anything else)
+* More information in the README about what the library can do, and how to use it
 
 ## Namespacing
 Client -> HTTPClient
