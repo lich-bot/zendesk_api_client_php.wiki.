@@ -146,7 +146,7 @@ print_r($results);
 //v2
 $results = $client->tickets(2)->comments()->findAll();
 print_r($results);
-
+```
 ## Sideloading
 ``` php
 //v1
