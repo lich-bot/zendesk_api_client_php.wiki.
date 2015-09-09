@@ -20,7 +20,8 @@ Client -> HTTPClient
 // v1
 use Zendesk\API\Client as ZendeskAPI;
 $client->setAuth('token', $token);
-
+```
+```php
 // v2
 use Zendesk\API\HTTPClient as ZendeskAPI;
 $client->setAuth('basic', ['username' => $username, 'token' => $token]);
@@ -41,6 +42,8 @@ $newTicket = $client->tickets()->create(array(
     ),
     'priority' => 'normal'
 ));
+```
+```php
 // v2
 
 $tickets = $client->tickets()->findAll();
@@ -73,7 +76,8 @@ $newTicket = $client->tickets()->attach($attachmentData)->create(array(
 
 
 print_r($newTicket);
-
+```
+```php
 //v2
 //upload an attachment
 $attachmentData = array(
@@ -103,7 +107,8 @@ $newuser = $client->users()->create(array(
   'name' => 'foo bar',
   'email' => 'foo@bar.com'
 ));
-
+```
+```php
 //v2
 $listusers = $client->users()->findAll();
 $newuser = $client->users()->create(array(
@@ -122,7 +127,8 @@ $newOrganzation = $client->organizations()->create(array(
 
 ));
 print_r($newOrganzation);
-
+```
+```php
 //v2
 $listOrganizations = $client->organizations()->findAll();
 print_r($listOrganizations);
@@ -150,7 +156,8 @@ print_r($results);
 //v1
 $results = $client->tickets(2)->comments()->findAll();
 print_r($results);
-
+```
+```php
 //v2
 $results = $client->tickets(2)->comments()->findAll();
 print_r($results);
@@ -160,7 +167,8 @@ print_r($results);
 //v1
 $results = $client->tickets()->find(['id' => [1], 'sideload' => ['users', 'groups']]);
 print_r($results);
-
+```
+```php
 //v2
 $results = $client->tickets()->find(1, ['sideload' => ['users', 'groups']]);
 print_r($results);
@@ -174,7 +182,8 @@ $params = array(
 );
 $results = $client->search($params);
 print_r($results);
-
+```
+```php
 //v2
 $results = $client->search()->find('sample');
 print_r($results);
@@ -192,7 +201,8 @@ Stack trace:
 #0 /Users/idejesus/code/phptest v1/v1.php(18): Zendesk\API\Tickets->find()
 #1 {main}
   thrown in /Users/idejesus/code/phptest v1/vendor/zendesk/zendesk_api_client_php/src/Zendesk/API/Tickets.php on line 118
-
+```
+```php
 //v2
 Fatal error: Uncaught exception 'Zendesk\API\Exceptions\ApiResponseException' with message 'Not Found [status code] 404 [details] {"error":"RecordNotFound","description":"Not found"}' in /Users/idejesus/code/phptest v2/vendor/zendesk/zendesk_api_client_php/src/Zendesk/API/Http.php:116
 Stack trace:
