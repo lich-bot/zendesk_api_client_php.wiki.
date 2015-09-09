@@ -145,7 +145,8 @@ print_r($newOrganzation);
 //v1
 $results = $client->triggers()->active();
 print_r($results);
-
+```
+```php
 //v2
 $results = $client->triggers()->findActive();
 print_r($results);
