@@ -140,7 +140,15 @@ List triggers
 ## Chaining
 
 ## Sideloading
+``` php
+//v1
+$results = $client->tickets()->find(['id' => [1], 'sideload' => ['users', 'groups']]);
+print_r($results);
 
+//v2
+$results = $client->tickets()->find(1, ['sideload' => ['users', 'groups']]);
+print_r($results);
+```
 ## Search
 
 ## Error handling
