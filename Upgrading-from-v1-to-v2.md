@@ -135,7 +135,15 @@ print_r($newOrganzation);
 ```
 
 ## List triggers
+```php
+//v1
+$results = $client->triggers()->active();
+print_r($results);
 
+//v2
+$results = $client->triggers()->findActive();
+print_r($results);
+```
 
 ## Chaining
 ``` php
