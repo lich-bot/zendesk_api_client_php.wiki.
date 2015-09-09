@@ -1,16 +1,15 @@
-# WIP Upgrade Guide
+# V1 - V2 Upgrade Guide
+The version 2 release of the PHP API resolved several issues we had in the version 1 and generally improved code quality. Listed below are the key changes done for version 2
 
-* Make the tests run faster. Which means mocking the API calls, reducing the number of tests and making them easier to write.
-* Make the code as DRY (Do not Repeat Yourself) as possible and improve maintainability.
-* Improve the way we handle chaining.
-* Better handling of routes.
-* Handle errors well.
-* Better exception handling
-* Better unit test coverage
 * Full support for all endpoints in the core API
-* Higher code quality in general
 * A consistent interface for resources (i.e. the constructors, getters, setters, etc. should all work the same whether you're working with apps, tickets or anything else)
-* More information in the README about what the library can do, and how to use it
+* Better handling of chaining.
+* Better handling of routes.
+* Better unit test coverage
+* Tests run faster. Which means mocking the API calls, reducing the number of tests and making them easier to write.
+* Improved maintainability.
+* Better error and exception handling
+* Examples to help developers understand how to use the client
 
 ## Namespacing
 Client -> HTTPClient
