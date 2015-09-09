@@ -75,7 +75,7 @@ $newTicket = $client->tickets()->attach($attachmentData)->create(array(
 ));
 
 
-print_r($newTicket);
+
 ```
 ```php
 //v2
@@ -96,7 +96,7 @@ $newTicket = $client->tickets()->attach($attachmentData)->create(array(
 ));
 
 
-print_r($newTicket);
+
 ```
 
 ## Get & create a user
@@ -120,59 +120,61 @@ $newuser = $client->users()->create(array(
 ```php
 //v1
 $listOrganizations = $client->organizations()->findAll();
-print_r($listOrganizations);
+
+
 $newOrganzation = $client->organizations()->create(array(
   'name' => 'New World2',
   'url' => 'www.n3world2.com'
 
 ));
-print_r($newOrganzation);
+
 ```
 ```php
 //v2
 $listOrganizations = $client->organizations()->findAll();
-print_r($listOrganizations);
+
+
 $newOrganzation = $client->organizations()->create(array(
   'name' => 'New World2',
   'url' => 'www.n3world2.com'
 
 ));
-print_r($newOrganzation);
+
 ```
 
 ## List triggers
 ```php
 //v1
 $results = $client->triggers()->active();
-print_r($results);
+
 ```
 ```php
 //v2
 $results = $client->triggers()->findActive();
-print_r($results);
+
 ```
 
 ## Chaining
 ``` php
 //v1
 $results = $client->tickets(2)->comments()->findAll();
-print_r($results);
+
 ```
 ```php
 //v2
 $results = $client->tickets(2)->comments()->findAll();
-print_r($results);
+
 ```
 ## Sideloading
 ``` php
 //v1
 $results = $client->tickets()->find(['id' => [1], 'sideload' => ['users', 'groups']]);
-print_r($results);
+
 ```
 ```php
 //v2
 $results = $client->tickets()->find(1, ['sideload' => ['users', 'groups']]);
-print_r($results);
+
 ```
 ## Search
 ``` php
@@ -182,12 +184,12 @@ $params = array(
     'query' => $query
 );
 $results = $client->search($params);
-print_r($results);
+
 ```
 ```php
 //v2
 $results = $client->search()->find('sample');
-print_r($results);
+
 ```
 
 ## Error handling
