@@ -30,7 +30,7 @@ $client->setAuth('basic', ['username' => $username, 'token' => $token]);
 
 Most basic operations are very similar. We've tried to keep them as consistent as possible between v1 and v2, but there are some slight differences.
 
-Get & create a ticket
+## Get & create a ticket
 ```php
 // v1
 $tickets = $client->tickets()->findAll();
@@ -52,7 +52,7 @@ $newTicket = $client->tickets()->create(array(
         'priority' => 'normal'
     ));
 ```
-Create a ticket with an attachment
+## Create a ticket with an attachment
 
 ```php
 //v1
@@ -95,7 +95,7 @@ $newTicket = $client->tickets()->attach($attachmentData)->create(array(
 print_r($newTicket);
 ```
 
-Get & create a user
+## Get & create a user
 ```php
 //v1
 $listusers = $client->users()->findAll();
@@ -111,7 +111,7 @@ $newuser = $client->users()->create(array(
   'email' => 'foo@bar.com'
 ));
 ```
-Get & create organizations
+## Get & Create Organizations
 ```php
 //v1
 $listOrganizations = $client->organizations()->findAll();
@@ -134,7 +134,7 @@ $newOrganzation = $client->organizations()->create(array(
 print_r($newOrganzation);
 ```
 
-List triggers
+## List triggers
 
 
 ## Chaining
@@ -158,6 +158,19 @@ $results = $client->tickets()->find(1, ['sideload' => ['users', 'groups']]);
 print_r($results);
 ```
 ## Search
+``` php
+//v1
+$query = 'sample';
+$params = array(
+    'query' => $query
+);
+$results = $client->search($params);
+print_r($results);
+
+//v2
+$results = $client->search()->find('sample');
+print_r($results);
+```
 
 ## Error handling
 
