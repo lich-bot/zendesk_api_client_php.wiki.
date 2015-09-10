@@ -12,6 +12,8 @@ The version 2 release of the PHP API resolved several issues we had in the versi
 * Examples to help developers understand how to use the client
 
 ## Namespacing
+There is only one change in the namespacing.
+
 Client -> HTTPClient
 
 ## Authentication
