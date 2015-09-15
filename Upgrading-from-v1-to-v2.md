@@ -75,9 +75,6 @@ $newTicket = $client->tickets()->attach($attachmentData)->create(array(
     'priority' => 'normal',
     'file' => $attachmentData['file']
 ));
-
-
-
 ```
 ```php
 //v2
@@ -96,9 +93,6 @@ $newTicket = $client->tickets()->attach($attachmentData)->create(array(
     'priority' => 'normal',
     'file' => $attachmentData['file']
 ));
-
-
-
 ```
 
 ## Get & create a user
