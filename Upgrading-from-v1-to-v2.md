@@ -50,12 +50,12 @@ $newTicket = $client->tickets()->create(array(
 
 $tickets = $client->tickets()->findAll();
 $newTicket = $client->tickets()->create(array(
-        'subject'  => 'The quick brown fox jumps over the lazy dog',
-        'comment'  => array(
-            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-        ),
-        'priority' => 'normal'
-    ));
+    'subject'  => 'The quick brown fox jumps over the lazy dog',
+    'comment'  => array(
+        'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    ),
+    'priority' => 'normal'
+));
 ```
 ## Create a ticket with an attachment
 
