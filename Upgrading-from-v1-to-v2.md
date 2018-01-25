@@ -14,7 +14,7 @@ The version 2 release of the PHP API resolved several issues we had in the versi
 ## Namespacing
 There is only one change in the namespacing.
 
-Client -> HTTPClient
+Client -> HttpClient
 
 ## Authentication
 
@@ -25,7 +25,7 @@ $client->setAuth('token', $token);
 ```
 ```php
 // v2
-use Zendesk\API\HTTPClient as ZendeskAPI;
+use Zendesk\API\HttpClient as ZendeskAPI;
 $client->setAuth('basic', ['username' => $username, 'token' => $token]);
 ```
 
